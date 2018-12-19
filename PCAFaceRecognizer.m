@@ -1,11 +1,13 @@
 facesData = load_yale_faces();
 testFaces = facesData(:, 5:8, :, :);
 trainFaces = facesData(:, [1:4 9:11], :, :);
-trainLbp = compileLBPBook(trainFaces);
-testLbp = compileLBPBook(testFaces);
-trainData = compileAllFeatures(trainFaces, trainLbp);
-testData = compileAllFeatures(testFaces, testLbp);
-[eigVec, ~] = pcaEigs(trainData);
+blockRows = 30;
+blockCols = 40;
+trainLbpVectors = compileLbpVectors(trainFaces, blockRows, blockCols);
+testLbpVectors = compileLbpVectors(testFaces, blockRows, blockCols);
+trainData = concatLbpDescriptor(trainFaces, trainLbpVectors);
+testData = concatLbpDescriptor(testFaces, testLbpVectors);
+[eigVec, ~] = pcaEigenfaces(trainData);
 models = pcaCoeffe(trainData, eigVec, 15, 7);
 
 while(1)
@@ -25,5 +27,5 @@ while(1)
         end
         message = sprintf("image %d is recognized as person %d.\n", i, top);
         disp(message);
-    end    
+    end
 end
