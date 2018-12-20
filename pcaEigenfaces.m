@@ -1,5 +1,5 @@
 function [eigVec,eigVal] = pcaEigenfaces(A)
-%pcaEigs Summary of this function goes here
+%pcaEigenfaces Summary of this function goes here
 %   Detailed explanation goes here
 C = A.' * A;
 [V, D] = eig(C);
