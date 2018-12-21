@@ -1,8 +1,8 @@
 facesData = load_yale_faces();
 testFaces = facesData(:, 5:8, :, :);
 trainFaces = facesData(:, [1:4 9:11], :, :);
-blockRows = 30;
-blockCols = 40;
+blockRows = 16;
+blockCols = 16;
 trainLbpVectors = compileLbpVectors(trainFaces, blockRows, blockCols);
 testLbpVectors = compileLbpVectors(testFaces, blockRows, blockCols);
 trainData = concatLbpDescriptor(trainFaces, trainLbpVectors);
