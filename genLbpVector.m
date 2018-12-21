@@ -9,5 +9,11 @@ for i = 1:cols
     wholeLBPsets(i, :) = genLBP(blockMatrix);
 end
 lbpVector = wholeLBPsets(:);
+
+% [rows, ~] = size(blocks);
+% cells = mat2cell(blocks, rows, ones(1, cols));
+% lbpCells = cellfun(@(x) genLBP(reshape(x, [m n])), cells,...
+%     'UniformOutput',false);
+% lbpVector = reshape(cell2mat(lbpCells), [], 1);
 end
 

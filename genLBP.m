@@ -7,19 +7,21 @@ tempCells = cells3by3;
 tempCells(5, :) = [];
 results = tempCells >= cells3by3(5, :);
 % permute rows by couter-clockwise from top-left
-idx = [1 2 3 5 8 7 6 4];
+% idx = [1 2 3 5 8 7 6 4];
 % clockwise from the center right
 % idx = [7 6 4 1 2 3 5 8];
-patterns = num2str(transpose(results(idx, :)));
-values = arrayfun(@(pattern) bin2dec(strrep(pattern, ' ', '')),...
-    string(patterns));
-% [~, count] = size(cells3by3);
-% values = zeros(1, count);
-% for j = 1:count
-%     temp = patterns(j, :);
-%     temp(isspace(temp)) = '';
-%     values(j) = bin2dec(temp);
-% end
+% patterns = num2str(transpose(results(idx, :)));
+% values = arrayfun(@(pattern) bin2dec(strrep(pattern, ' ', '')),...
+%     string(patterns));
+
+patterns = num2str(transpose(results));
+[~, count] = size(cells3by3);
+values = zeros(1, count);
+for j = 1:count
+    temp = patterns(j, :);
+    temp(isspace(temp)) = '';
+    values(j) = bin2dec(temp);
+end
 lbpFeatures = histcounts(values, 0:256);
 
 % uniform LBP
