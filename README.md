@@ -11,3 +11,4 @@ w/no glasses, normal, right-light, sad
 |:--------:|:--------------:|:------:|
 | PCA | 68.3% | 71.7% |
 | LDA | 90.0% | 91.7% |
+| PCA+SVM | 90.0% | N/A |
