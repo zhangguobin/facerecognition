@@ -8,6 +8,7 @@ w/no glasses, normal, right-light, sad
 
 ## Performance Comparisions
 | Algorithm | Accuracy |
-|:--------------:|:----:|
-| PCA one-vs-all | 68% |
-| LDA one-vs-all | 90% |
+|:--------------:|:------:|
+| PCA one-vs-all | 68.3% |
+| LDA one-vs-all | 90.0% |
+| LDA multi-class| 91.7% |
