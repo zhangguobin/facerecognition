@@ -7,8 +7,7 @@ center-light, w/glasses, happy, left-light, sleepy, surprised, wink
 w/no glasses, normal, right-light, sad
 
 ## Performance Comparisions
-| Algorithm | Accuracy |
-|:--------------:|:------:|
-| PCA one-vs-all | 68.3% |
-| LDA one-vs-all | 90.0% |
-| LDA multi-class| 91.7% |
+| Accuracy | One-vs-All | Multi-Class |
+|:--------:|:--------------:|:------:|
+| PCA | 68.3% | 71.7% |
+| LDA | 90.0% | 91.7% |
