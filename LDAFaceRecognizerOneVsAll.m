@@ -21,7 +21,7 @@ testProjected = optimalW.' * testDataReduced;
 [len, ~] = size(testProjected);
 reshapedFisherfaces = reshape(permute(fisherfaces, [3 2 1]),...
     len, 2*numPersons);
-reshapedFisherfaces = repmat(reshapedFisherfaces, numPersons * numTests, 1);
+reshapedFisherfaces = repmat(reshapedFisherfaces, numPersons * 4, 1);
 faceDiffs = abs(testProjected(:) - reshapedFisherfaces);
 
 numTests = 4;

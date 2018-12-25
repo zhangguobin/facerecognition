@@ -41,6 +41,8 @@ results = zeros(15, 4);
 testProjected = optimalW.' * testDataReduced;
 reshapedFisherfaces = repmat(fisherfaces.', 60, 1);
 diffs = abs(testProjected(:) - reshapedFisherfaces);
+
+len = size(fisherfaces, 2);
 for i = 1:15
     for j = 1:4
         index = (i-1) * 4 + j;
@@ -48,5 +50,5 @@ for i = 1:15
         [~, results(i,j)] = min(distancesL1);
     end
 end
-accuracy = sum(results == transpose(1:15), 'all') / (numPersons * 4);
+accuracy = sum(results == transpose(1:15), 'all') / (15 * 4);
 fprintf("Face recognition accuracy: %f.\n", accuracy);

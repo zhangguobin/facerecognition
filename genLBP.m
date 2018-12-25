@@ -37,6 +37,6 @@ uniformLbp(1:58) = lbpFeatures(uniPatterns + 1);
 uniformLbp(59) = sum(lbpFeatures(otherPatterns + 1));
 
 % normalization
-uniformLbp = normalize(uniformLbp);
+% uniformLbp = normalize(uniformLbp);
 end
 

@@ -24,7 +24,7 @@ for i = 1:15
         [~, predicts(i, j)] = min(distancesL1);
     end
 end
-accuracy = sum(predicts == transpose(1:15), 'all') / (numPersons * 4);
+accuracy = sum(predicts == transpose(1:15), 'all') / (15 * 4);
 fprintf("Face recognition accuracy: %f.\n", accuracy);
 
 % while(1)
