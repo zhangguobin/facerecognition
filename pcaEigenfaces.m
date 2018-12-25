@@ -12,6 +12,7 @@ for i = 1 : length(d)
     if topLambda / totalLambda > 0.95
         topVec = sortedV(:, 1:i);
         topVal = d(1:i);
+        break;
     end
 end
 eigVec = A * topVec;

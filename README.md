@@ -10,5 +10,6 @@ w/no glasses, normal, right-light, sad
 | Accuracy | One-vs-All | Multi-Class |
 |:--------:|:--------------:|:------:|
 | PCA | 75.0% | 75.0% |
-| LDA | 83.3% | 90.0% |
-| PCA+SVM | 91.7% | N/A |
+| LDA | 86.7% | 90.0% |
+| PCA+SVM* | 88.3% | N/A |
+* 95% variance are kept after dimensionality reduction, which degrades SVM performance
